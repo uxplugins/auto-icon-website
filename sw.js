@@ -27,7 +27,7 @@ workbox.core.clientsClaim();
  */
 self.__precacheManifest = [
   {
-    "url": "webpack-runtime-77a5e2418977750a863f.js"
+    "url": "webpack-runtime-81e23ab63f905060b922.js"
   },
   {
     "url": "styles.e8af1bbad678ffe6f5ec.css"
@@ -37,7 +37,7 @@ self.__precacheManifest = [
   },
   {
     "url": "offline-plugin-app-shell-fallback/index.html",
-    "revision": "2f555606f036d78c814be431d4f32a15"
+    "revision": "17b94d098487df169dbaff5d3047e6b9"
   },
   {
     "url": "component---cache-caches-gatsby-plugin-offline-app-shell-js-233f08159da4139ab526.js"
@@ -48,18 +48,18 @@ self.__precacheManifest = [
   },
   {
     "url": "page-data/sq/d/1358681299.json",
-    "revision": "64f8b6de9be95675668c5804cc1039f7"
+    "revision": "a57174dea45bf54f9efd0398a3e0fd93"
   },
   {
     "url": "page-data/app-data.json",
-    "revision": "ec0d5199b6c7ffbfc49d9af2300d9a3c"
+    "revision": "0919e4a5b0b4e7cb99e0968babebe528"
   },
   {
     "url": "polyfill-3b4e75f17a6a12560156.js"
   },
   {
     "url": "manifest.webmanifest",
-    "revision": "664822b18532062c1641f9a4d88f68a9"
+    "revision": "99150fdd55b2366cb7e8e13973371c3e"
   }
 ].concat(self.__precacheManifest || []);
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
@@ -146,12 +146,12 @@ const navigationRoute = new NavigationRoute(async ({ event }) => {
   lastNavigationRequest = event.request.url
 
   let { pathname } = new URL(event.request.url)
-  pathname = pathname.replace(new RegExp(`^/auto-icon`), ``)
+  pathname = pathname.replace(new RegExp(`^/auto-icon-website`), ``)
 
   // Check for resources + the app bundle
   // The latter may not exist if the SW is updating to a new version
   const resources = await idbKeyval.get(`resources:${pathname}`)
-  if (!resources || !(await caches.match(`/auto-icon/app-43abd86e43d0966b0de9.js`))) {
+  if (!resources || !(await caches.match(`/auto-icon-website/app-ef918d4ed503fbd7318d.js`))) {
     return await fetch(event.request)
   }
 
@@ -164,7 +164,7 @@ const navigationRoute = new NavigationRoute(async ({ event }) => {
     }
   }
 
-  const offlineShell = `/auto-icon/offline-plugin-app-shell-fallback/index.html`
+  const offlineShell = `/auto-icon-website/offline-plugin-app-shell-fallback/index.html`
   const offlineShellWithKey = workbox.precaching.getCacheKeyForURL(offlineShell)
   return await caches.match(offlineShellWithKey)
 })
