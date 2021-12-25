@@ -1,0 +1,47 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Users\Titanoboa\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add rsuite
+
+PATH: 
+  C:\Program Files (x86)\Common Files\Intel\Shared Libraries\redist\intel64\compiler;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\Git\cmd;C:\Program Files\dotnet\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files\Genymobile\Genymotion\tools;C:\Program Files\Android\jdk\microsoft_dist_openjdk_1.8.0.25\bin;C:\Program Files\nodejs\;C:\Users\Titanoboa\AppData\Local\Microsoft\WindowsApps;C:\Users\Titanoboa\.dotnet\tools;C:\Users\Titanoboa\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\cmder\bin;C:\Users\Titanoboa\AppData\Roaming\npm
+
+Yarn version: 
+  1.22.10
+
+Node version: 
+  16.13.0
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: EPERM: operation not permitted, unlink 'C:\Users\Titanoboa\Documents\Projects\Gatsby\auto-icon\node_modules\lmdb-store\prebuilds\win32-x64\node.abi93.node'
+
+npm manifest: 
+  {
+    "name": "auto-icon",
+    "version": "1.0.0",
+    "private": true,
+    "description": "Auto Icon",
+    "author": "ryan-didevar",
+    "keywords": [
+      "gatsby"
+    ],
+    "scripts": {
+      "develop": "gatsby develop",
+      "start": "gatsby develop",
+      "build": "gatsby build",
+      "serve": "gatsby serve",
+      "clean": "gatsby clean"
+    },
+    "dependencies": {
+      "gatsby": "^4.3.0",
+      "react": "^17.0.1",
+      "react-dom": "^17.0.1"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
