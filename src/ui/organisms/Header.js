@@ -14,17 +14,17 @@ const Header = () => {
       `}
       render={(data) => (
         <Container>
-          <Navbar.Brand href="/">
+          <Navbar.Brand href="/auto-icon-website/">
             <Icon>
               <img src={data.file.publicURL} alt="Brand Auto Icon" width={30} height={30} />
               <BrandText className="poppins"> Auto Icon</BrandText>
             </Icon>
           </Navbar.Brand>
           <NavItemContainer>
-            <Nav.Item className="poppins" href="/plugin">
+            <Nav.Item className="poppins" href="/auto-icon-website/plugin">
               Plugin
             </Nav.Item>
-            <Nav.Item className="poppins" href="/new-icons">
+            <Nav.Item className="poppins" href="/auto-icon-website/new-icons">
               New Icons
             </Nav.Item>
           </NavItemContainer>

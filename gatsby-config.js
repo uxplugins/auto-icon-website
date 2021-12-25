@@ -52,7 +52,7 @@ module.exports = {
       options: {
         name: "AutoIconWebsite",
         short_name: "AutoIcon",
-        start_url: "/",
+        start_url: "/auto-icon-website/",
         background_color: "#FFF",
         theme_color: "#FFF",
         // Enables "Add to Homescreen" prompt and disables browser UI (including back button)
