@@ -1,11 +1,11 @@
 module.exports = [
     {
-      slug: "/first",
+      slug: "/auto-icon-website/first",
       title: "First Page",
       description: "I am the first page!",
     },
     {
-      slug: "/second",
+      slug: "/auto-icon-website/second",
       title: "Second Page",
       description: "I am the second page!",
     },

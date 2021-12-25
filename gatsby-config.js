@@ -1,6 +1,7 @@
 module.exports = {
+  pathPrefix: `/auto-icon-website`,
   siteMetadata: {
-    siteUrl: "https://www.yourdomain.tld",
+    siteUrl: "https://uxplugins.github.io/auto-icon-website/",
     title: "Auto Icon",
     menuLinks: [
       {
@@ -9,15 +10,14 @@ module.exports = {
       },
       {
         name: "plugin",
-        link: "/plugin",
+        link: "/auto-icon-website/plugin",
       },
       {
         name: "new-icons",
-        link: "/new-icons",
+        link: "/auto-icon-website/new-icons",
       },
     ],
   },
-  pathPrefix: `/auto-icon-website`,
   plugins: [
     `gatsby-plugin-sharp`,
     `gatsby-plugin-image`,
