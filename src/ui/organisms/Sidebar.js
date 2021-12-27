@@ -1,3 +1,4 @@
+import { Link } from "gatsby";
 import React from "react";
 import { Nav, Sidenav } from "rsuite";
 import styled from "styled-components";
@@ -5,15 +6,16 @@ import { ALL_ICONS } from "../../utils/icons";
 
 const Sidebar = () => {
   const iconsList = ALL_ICONS.sort((a, b) => (a.name > b.name ? 1 : -1));
+  console.log("Icon List: ", iconsList)
   return (
     <Container>
       <Sidenav>
         <Sidenav.Body>
           <SidebarContainer>
             {iconsList.map((icon) => (
-              <Nav.Item key={icon.id} eventKey={icon.id}>
+              <Link to={`/${icon.id}`} key={icon.id} eventKey={icon.id}>
                   <Tag className="px2 py1">{icon.name}</Tag>
-              </Nav.Item>
+              </Link>
             ))}
           </SidebarContainer>
         </Sidenav.Body>

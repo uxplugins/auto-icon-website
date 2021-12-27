@@ -1,13 +1,22 @@
 module.exports = [
-    {
-      slug: "/first",
-      title: "First Page",
-      description: "I am the first page!",
-    },
-    {
-      slug: "/second",
-      title: "Second Page",
-      description: "I am the second page!",
-    },
-  ];
-  
+  {
+    slug: "/ai",
+    title: "Ant Design Icons",
+    description: "",
+  },
+  {
+    slug: "/bs",
+    title: "Bootstrap Icons",
+    description: "",
+  },
+  {
+    slug: "/bi",
+    title: "BoxIcons",
+    description: "",
+  },
+  {
+    slug: "/di",
+    title: "Devicons",
+    description: "",
+  },
+];

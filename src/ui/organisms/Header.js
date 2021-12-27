@@ -1,36 +1,25 @@
 import React from "react";
 import { Nav, Navbar } from "rsuite";
 import styled from "styled-components";
-import { StaticQuery, graphql } from "gatsby";
+import Logo from "../../images/icon.svg";
 const Header = () => {
   return (
-    <StaticQuery
-      query={graphql`
-        query IconQuery {
-          file(relativePath: { eq: "icon.png" }) {
-            publicURL
-          }
-        }
-      `}
-      render={(data) => (
-        <Container>
-          <Navbar.Brand href="/auto-icon-website/">
-            <Icon>
-              <img src={data.file.publicURL} alt="Brand Auto Icon" width={30} height={30} />
-              <BrandText className="poppins"> Auto Icon</BrandText>
-            </Icon>
-          </Navbar.Brand>
-          <NavItemContainer>
-            <Nav.Item className="poppins" href="/auto-icon-website/plugin">
-              Plugin
-            </Nav.Item>
-            <Nav.Item className="poppins" href="/auto-icon-website/new-icons">
-              New Icons
-            </Nav.Item>
-          </NavItemContainer>
-        </Container>
-      )}
-    />
+    <Container>
+      <Navbar.Brand href="/">
+        <Icon>
+          <img src={Logo} alt="Brand Auto Icon" width={30} height={30} />
+          <BrandText className="poppins"> Auto Icon</BrandText>
+        </Icon>
+      </Navbar.Brand>
+      <NavItemContainer>
+        <Nav.Item className="poppins" href="/plugin">
+          Plugin
+        </Nav.Item>
+        <Nav.Item className="poppins" href="/new-icons">
+          New Icons
+        </Nav.Item>
+      </NavItemContainer>
+    </Container>
   );
 };
 const Container = styled(Navbar)`

@@ -4,7 +4,7 @@ exports.createPages = async ({ actions }) => {
   const { createPage } = actions;
   data.forEach(({slug, title, description}) => {
     createPage({
-      path: `/auto-icon-website${slug}`,
+      path: slug,
       component: path.resolve("./src/templates/Generic.js"),
       context: {
         title: title,
