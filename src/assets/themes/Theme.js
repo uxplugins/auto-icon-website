@@ -10,7 +10,8 @@ const theme = {
       fg: "#FFFFFF",
       success: "#00AC5C",
       error: "#EB3323",
-      primary: "#00C6BE"
+      primary: "#00C6BE",
+      tooltip: '#E9F5FE',
     },
     gradient: {
       first: "#00D9E5",

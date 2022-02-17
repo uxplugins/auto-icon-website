@@ -1,6 +1,6 @@
 import React from "react";
 import { Grid, Row, Col } from "rsuite";
-import Sidebar from '../ui/organisms/Sidebar'
+import Sidebar from "../ui/organisms/Sidebar";
 const SubPages = ({ children }) => {
   return (
     <Grid fluid>
@@ -8,7 +8,7 @@ const SubPages = ({ children }) => {
         <Col xs={24} md={6}>
           <Sidebar />
         </Col>
-        <Col xs={24} md={18}>
+        <Col style={{ height: "100%" }} id="list-container" xs={24} md={18}>
           {children}
         </Col>
       </Row>
