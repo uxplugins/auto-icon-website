@@ -5,7 +5,7 @@ import Header from "../ui/organisms/Header";
 
 const Layout = ({ children }) => {
   return (
-    <Container>
+    <Container className="Layout_Container">
       <GlobalStyle />
       <Header />
       {children}
@@ -13,7 +13,7 @@ const Layout = ({ children }) => {
   );
 };
 const Container = styled.div`
-  width: 100%;
-  height: 100%;
+  display: flex;
+  flex-direction: column;
 `;
 export default Layout;

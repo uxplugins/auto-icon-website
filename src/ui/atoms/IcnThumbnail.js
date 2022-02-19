@@ -1,17 +1,27 @@
-import React from "react";
-import { Tooltip, Whisper } from "rsuite";
+import React, { useState } from "react";
+import { Placeholder, Tooltip, Whisper } from "rsuite";
 import styled from "styled-components";
 import Typography from "./Typography";
 const BASE_URL = "https://icon.fra1.cdn.digitaloceanspaces.com/";
 // 'https://auto-icon-public-svg.s3.ir-thr-at1.arvanstorage.com/';
 const IcnThumbnail = (props) => {
   const { icon } = props;
+  const [loaded, setLoaded] = useState(false);
   const encodedPack = encodeURI(icon.packName);
   const url = `${BASE_URL}${encodedPack}/icons/${icon.name}.svg`;
   return (
     <Container>
       <Content draggable>
-        <Img id={icon.id} src={url} alt={`${icon.name} icon`} />
+        {!loaded && (
+          <Placeholder.Graph style={{ width: 110, height: 100 }} active />
+        )}
+        <Img
+          onLoad={() => setLoaded(true)}
+          id={icon.id}
+          src={url}
+          alt={`${icon.name} icon`}
+          loaded={loaded}
+        />
       </Content>
       <Whisper
         delayHide={0}
@@ -33,60 +43,60 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  width: 55px;
-  height: 68px;
+  width: 110px;
+  height: 110px;
   border-radius: 3px;
   overflow: hidden;
 `;
 const Content = styled.div`
-    width: 100%;
-    height: 100%;
-    flex: 4;
-    border-radius: 3px;
-    display: flex;
-    align-items: center;
-    cursor: grab;
-    justify-content: center;
-    &:hover {
-        background-color: #1ce3dc;
-        transition: all 0.5s;
-    }
+  width: 100%;
+  height: 100%;
+  flex: 4;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  justify-content: center;
+  &:hover {
+    background-color: #1ce3dc;
+    transition: all 0.5s;
+  }
 `;
 const TxtTooltip = styled.p`
-    color: #CBCBCB !important;
+  color: #cbcbcb !important;
 `;
 const tooltip = (title) => (
   <StyledTooltip>
-      <TxtTooltip>{title}</TxtTooltip>
+    <TxtTooltip>{title}</TxtTooltip>
   </StyledTooltip>
 );
 const Img = styled.img`
   margin-top: 3px;
-  width: 24px;
-  height: 24px;
+  width: 32px;
+  display: ${(props) => (props.loaded ? "block" : "none")};
 `;
 const StyledTooltip = styled(Tooltip)`
-    z-index: 9991;
-    & > .rs-tooltip-inner {
-        background-color: #E9F5FE;
-    }
-    & > .rs-tooltip-arrow {
-        border-top-color: #E9F5FE !important;
-    }
+  z-index: 9991;
+  & > .rs-tooltip-inner {
+    background-color: #e9f5fe;
+  }
+  & > .rs-tooltip-arrow {
+    border-top-color: #e9f5fe !important;
+  }
 `;
 const Text = styled(Typography)`
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    max-width: 43px;
-    width: 100%;
-    height: 100%;
-    flex: 1;
-    cursor: pointer;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  max-width: 110px;
+  width: 100%;
+  height: 100%;
+  flex: 1;
+  cursor: pointer;
 `;
 const TextContainer = styled.div`
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 `;
 export default IcnThumbnail;

@@ -13,6 +13,11 @@ display: flex;
 flex-direction: column;
 }
 
+#___gatsby{
+    height: 100%;
+    overflow-y: hidden;
+}
+
 & .rs-sidenav-item{
     padding:8px 0 8px 50px !important;
     font-family: 'Roboto', sans-serif !important;

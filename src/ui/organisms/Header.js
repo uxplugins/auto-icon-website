@@ -4,8 +4,8 @@ import styled from "styled-components";
 import Logo from "../../images/icon.svg";
 const Header = () => {
   return (
-    <Container>
-      <Navbar.Brand href="/">
+    <Container className="Header_Container" >
+      <Navbar.Brand style={{paddingLeft:0}} href="/">
         <Icon>
           <img src={Logo} alt="Brand Auto Icon" width={30} height={30} />
           <BrandText className="poppins"> Auto Icon</BrandText>
@@ -27,7 +27,8 @@ const Container = styled(Navbar)`
   display: flex;
   flex-direction: row;
   width: 100%;
-  padding-left: 32px;
+  padding-left: 25px;
+  padding-bottom: 5px;
   & .rs-navbar {
     display: flex;
   }

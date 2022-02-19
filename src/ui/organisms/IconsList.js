@@ -4,10 +4,11 @@ import styled from "styled-components";
 import IcnThumbnail from "../atoms/IcnThumbnail";
 import useWindowSize from "../../utils/use-window-size";
 const IconsList = (props) => {
-  const list = props.icons ? props.icons : [];
+  const { icons } = props;
+  const list = icons ? icons : [];
   const [columnCount, setColumnCount] = useState(0);
   const [rowCount, setRowCount] = useState(0);
-  const minColumnWidth = 55;
+  const minColumnWidth = 120;
   const [columnWidth, setColumnWidth] = useState(minColumnWidth);
   const [height, setHeight] = useState(0);
   const [width, setWidth] = useState(0);
@@ -18,7 +19,7 @@ const IconsList = (props) => {
     setTimeout(() => {
       setWidth(document.getElementById("grid-container").offsetWidth);
       setHeight(sizes.height);
-    }, 1000);
+    }, 500);
   }, [sizes.height, sizes.width]);
   useEffect(() => {
     const itemsPerRow = Math.floor((sizes.width - 40) / minColumnWidth);
@@ -55,10 +56,10 @@ const IconsList = (props) => {
         style={{ overflowX: "hidden" }}
         columnCount={columnCount}
         columnWidth={columnWidth}
-        height={height}
+        height={height - 140}
         rowCount={rowCount}
-        rowHeight={70}
-        width={width-20}
+        rowHeight={120}
+        width={width - 20}
       >
         {Cell}
       </Grid>
@@ -72,10 +73,8 @@ const CellContainer = styled.div`
 `;
 
 const Container = styled.div`
-  width: 99%;
-  /* flex: 1; */
+  width: 100%;
   height: calc(100% - 40px);
   border-radius: 5px;
-  background-color: #f3f7fb;
 `;
 export default IconsList;

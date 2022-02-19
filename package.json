@@ -16,6 +16,8 @@
     "deploy": "gatsby build --prefix-paths && gh-pages -d public"
   },
   "dependencies": {
+    "auto-icon-react": "^0.1.4",
+    "fuse.js": "^6.5.3",
     "gatsby": "^4.3.0",
     "gatsby-plugin-catch-links": "^4.3.0",
     "gatsby-plugin-image": "^2.4.0",
@@ -36,6 +38,7 @@
     "reactstrap": "^9.0.1",
     "rsuite": "^5.3.0",
     "sass": "^1.45.0",
-    "styled-components": "^5.3.3"
+    "styled-components": "^5.3.3",
+    "use-debounce": "^7.0.1"
   }
 }

@@ -1,14 +1,16 @@
 import React from "react";
 import { Grid, Row, Col } from "rsuite";
+import SearchInput from "../ui/molecules/SearchInput";
 import Sidebar from "../ui/organisms/Sidebar";
 const SubPages = ({ children }) => {
   return (
-    <Grid fluid>
+    <Grid className="SubPage_Grid" style={{ height: "100%" }} fluid>
       <Row className="show-grid">
-        <Col xs={24} md={6}>
+        <Col className="Sidebar_Container" xs={6} md={6}>
           <Sidebar />
         </Col>
-        <Col style={{ height: "100%" }} id="list-container" xs={24} md={18}>
+        <Col id="list-container" xs={18} md={18}>
+          <SearchInput />
           {children}
         </Col>
       </Row>
