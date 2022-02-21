@@ -5,7 +5,7 @@ import Logo from "../../images/icon.svg";
 const Header = () => {
   return (
     <Container className="Header_Container">
-      <Navbar.Brand style={{ paddingLeft: 0 }} href="/auto-icon-website/">
+      <Navbar.Brand style={{ paddingLeft: 0 }} href="/auto-icon-website">
         <Icon>
           <img src={Logo} alt="Brand Auto Icon" width={30} height={30} />
           <BrandText className="poppins"> Auto Icon</BrandText>
