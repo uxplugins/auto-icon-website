@@ -56,7 +56,7 @@ const IconsList = (props) => {
         style={{ overflowX: "hidden" }}
         columnCount={columnCount}
         columnWidth={columnWidth}
-        height={height - 140}
+        height={height - 160}
         rowCount={rowCount}
         rowHeight={120}
         width={width - 20}
