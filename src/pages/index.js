@@ -1,11 +1,16 @@
-import * as React from "react";
+import React from "react";
 import "rsuite/dist/rsuite.min.css";
 import Main from "../ui/organisms/Main";
-import SubPages from '../layouts/subPages.js'
+import SubPages from "../layouts/subPages";
+import PopupModal from "../ui/organisms/PopupModal";
+
 // markup
 const IndexPage = () => {
   return (
-      <SubPages><Main/></SubPages>
+    <SubPages>
+      <PopupModal />
+      <Main />
+    </SubPages>
   );
 };
 

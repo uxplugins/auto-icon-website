@@ -1,14 +1,16 @@
-import React, { useEffect, useRef, useState } from "react";
-import { FixedSizeGrid as Grid } from "react-window";
+import React, { memo, useEffect, useRef, useState } from "react";
+import { useAtom } from "jotai";
+import { FixedSizeGrid as Grid, areEqual } from "react-window";
 import styled from "styled-components";
 import IcnThumbnail from "../atoms/IcnThumbnail";
 import useWindowSize from "../../utils/use-window-size";
-const IconsList = (props) => {
-  const { icons } = props;
-  const list = icons ? icons : [];
+import { IconListAtom } from "../../Store/filter";
+const IconsList = () => {
+  const [icons] = useAtom(IconListAtom);
+  // const list = icons ? icons : [];
   const [columnCount, setColumnCount] = useState(0);
   const [rowCount, setRowCount] = useState(0);
-  const minColumnWidth = 120;
+  const minColumnWidth = 110;
   const [columnWidth, setColumnWidth] = useState(minColumnWidth);
   const [height, setHeight] = useState(0);
   const [width, setWidth] = useState(0);
@@ -16,24 +18,24 @@ const IconsList = (props) => {
   const ref = useRef(null);
 
   useEffect(() => {
-    setTimeout(() => {
-      setWidth(document.getElementById("grid-container").offsetWidth);
-      setHeight(sizes.height);
-    }, 500);
-  }, [sizes.height, sizes.width]);
-  useEffect(() => {
-    const itemsPerRow = Math.floor((sizes.width - 40) / minColumnWidth);
+    const itemsPerRow = Math.floor((width - 20) / minColumnWidth);
     const colDifPx =
-      ((sizes.width - 40) / minColumnWidth - itemsPerRow) * minColumnWidth;
+      ((width - 20) / minColumnWidth - itemsPerRow) * minColumnWidth;
     if (colDifPx > 0) {
       const plusColumWidth = Math.floor(colDifPx / itemsPerRow);
       setColumnWidth(minColumnWidth + plusColumWidth);
     }
     setColumnCount(itemsPerRow);
-    setRowCount(Math.ceil(list.length / itemsPerRow));
-  }, [props.icons, sizes.width]);
-  const Cell = ({ columnIndex, rowIndex, style }) => {
-    const image = list[rowIndex * columnCount + columnIndex];
+    setRowCount(Math.ceil(icons.length / itemsPerRow));
+  }, [icons, sizes.width, width]);
+  useEffect(() => {
+    setTimeout(() => {
+      setWidth(document.getElementById("grid-container").offsetWidth);
+      setHeight(sizes.height);
+    }, 500);
+  }, [sizes.height, sizes.width]);
+  const Cell = memo(({ columnIndex, rowIndex, style }) => {
+    const image = icons[rowIndex * columnCount + columnIndex];
     if (image) {
       return (
         <CellContainer
@@ -48,18 +50,19 @@ const IconsList = (props) => {
     } else {
       return <div />;
     }
-  };
+  }, areEqual);
 
   return (
     <Container id="grid-container" className="IconItemContainer" ref={ref}>
       <Grid
         style={{ overflowX: "hidden" }}
+        // itemData={itemData}
         columnCount={columnCount}
         columnWidth={columnWidth}
-        height={height - 160}
+        height={height - 105}
         rowCount={rowCount}
         rowHeight={120}
-        width={width - 20}
+        width={width}
       >
         {Cell}
       </Grid>

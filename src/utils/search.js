@@ -6,6 +6,7 @@ const options = {
     findAllMatches: false,
     includeScore: true,
     keys: [{name: 'name', weight: 10}],
+    useExtendedSearch: true
 };
 export const handleSearchList = (allIconList, inpVal, setIconList) => {
     const fuse = new Fuse(allIconList, options);

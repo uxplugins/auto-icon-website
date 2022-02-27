@@ -4,21 +4,21 @@ import styled from "styled-components";
 import Logo from "../../images/icon.svg";
 const Header = () => {
   return (
-    <Container className="Header_Container">
-      <Navbar.Brand style={{ paddingLeft: 0 }} href="/auto-icon-website">
+    <Container id="header-container" className="Header_Container">
+      <Navbar.Brand style={{ paddingLeft: 0 }} href="/">
         <Icon>
           <img src={Logo} alt="Brand Auto Icon" width={30} height={30} />
           <BrandText className="poppins"> Auto Icon</BrandText>
         </Icon>
       </Navbar.Brand>
-      <NavItemContainer>
-        <Nav.Item className="poppins" href="/auto-icon-website/plugin">
+      {/* <NavItemContainer>
+        <Nav.Item className="poppins" href="/plugin">
           Plugin
         </Nav.Item>
-        <Nav.Item className="poppins" href="/auto-icon-website/new-icons">
+        <Nav.Item className="poppins" href="/new-icons">
           New Icons
         </Nav.Item>
-      </NavItemContainer>
+      </NavItemContainer> */}
     </Container>
   );
 };

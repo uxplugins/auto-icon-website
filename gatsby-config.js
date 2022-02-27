@@ -6,15 +6,15 @@ module.exports = {
     menuLinks: [
       {
         name: "home",
-        link: "/auto-icon-website",
+        link: "/",
       },
       {
         name: "plugin",
-        link: "/auto-icon-website/plugin",
+        link: "/plugin",
       },
       {
         name: "new-icons",
-        link: "/auto-icon-website/new-icons",
+        link: "/new-icons",
       },
     ],
   },

@@ -4,19 +4,17 @@ import { Nav, Sidenav } from "rsuite";
 import styled from "styled-components";
 // import { ALL_ICONS } from "../../utils/icons";
 import data from "../../assets/data/data.json";
-import useWindowSize from "../../utils/use-window-size";
 
-const Sidebar = () => {
+const ListSidebar = () => {
   const packList = data.packs;
-  const size = useWindowSize();
 
   return (
-    <Container height={size.height - 75}>
+    <Container >
       <Sidenav>
         <Sidenav.Body>
           <SidebarContainer>
             {packList.map((pack) => (
-              <Link to={`/${pack.name}`} key={pack.id} eventKey={pack.id}>
+              <Link to={`/${pack.name}`} key={pack.id}>
                 <Tag className="px2 py1">{pack.name}</Tag>
               </Link>
             ))}
@@ -28,7 +26,7 @@ const Sidebar = () => {
 };
 const Container = styled.div`
   overflow-y: scroll;
-  height: ${(props) => props.height}px;
+  height: calc(100vh - 62px);
 `;
 const SidebarContainer = styled(Nav)`
   margin: 0;
@@ -68,4 +66,4 @@ const SidebarContainer = styled(Nav)`
 const Tag = styled.p`
   border-radius: 5px;
 `;
-export default Sidebar;
+export default ListSidebar;

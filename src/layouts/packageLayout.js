@@ -1,11 +1,12 @@
+// import { useAtom } from "jotai";
 import React from "react";
-// import { Col } from "rsuite";
-import SearchInput from "../ui/molecules/SearchInput";
-const PackageLayout = ({ children }) => {
+// import { ChildrenAtom } from "../Store/children";
+// import SubPages from "./subPages";
+
+const PackageLayout = ({children}) => {
   return (
     <>
-      <SearchInput />
-      {children}
+      {children} 
     </>
   );
 };
