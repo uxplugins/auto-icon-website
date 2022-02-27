@@ -1,6 +1,7 @@
 import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
 body {
     background-color: #FFF;
     color: #000;
@@ -11,6 +12,12 @@ html,body, #root{
 height:100%;
 display: flex;
 flex-direction: column;
+font-family: 'Roboto', sans-serif;
+}
+
+#___gatsby{
+    height: 100%;
+    overflow-y: hidden;
 }
 
 & .rs-sidenav-item{
@@ -32,6 +39,9 @@ flex-direction: column;
     font-weight: 500;
     font-size: 18px;
     color: #000;
+}
+.ReactModalPortal{
+    z-index: 9999;
 }
 `;
 export default GlobalStyle;

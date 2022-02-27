@@ -1,19 +1,22 @@
 import React from "react";
 import styled from "styled-components";
 import GlobalStyle from "../assets/themes/GlobalStyle";
-import Header from "../ui/organisms/Header";
-
+import PopupModal from "../ui/organisms/PopupModal";
+import { useAtom } from "jotai";
+import { ModalItemAtom } from "../Store/modal";
 const Layout = ({ children }) => {
+  const [modal] = useAtom(ModalItemAtom);
+
   return (
-    <Container>
+    <Container className="Layout_Container">
       <GlobalStyle />
-      <Header />
+      {modal.id.length > 0 && <PopupModal />}
       {children}
     </Container>
   );
 };
 const Container = styled.div`
-  width: 100%;
-  height: 100%;
+  display: flex;
+  flex-direction: column;
 `;
 export default Layout;
